@@ -1,5 +1,6 @@
 U can use any vector for getting orientation such as acclereation, magnetick field, sun sensor vector.
 Using example:
+~~~
 #include <iostream>
 #include <fstream>
 #include "Madgwick.h"
@@ -65,3 +66,4 @@ int main()
         n++;
     }
 }
+~~~
