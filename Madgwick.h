@@ -8,7 +8,7 @@
 #ifndef MADGWICK_H_
 #define MADGWICK_H_
 
-#include <eigen3/Eigen/Eigen>
+#include "Eigen/Eigen"
 
 using Vec3 = Eigen::Vector3d;
 using Quat = Eigen::Quaternion<double>;
