@@ -127,6 +127,21 @@ void Madgwick_filter::update(Vec3 sun_ref, Vec3 magn_ref, Vec3 sun_meas, Vec3 ma
     q_1.normalize();
 }
 
+void Madgwick_filter::update(Vec3 sun_ref, Vec3 sun_meas, Vec3 omega, double dt)
+{
+    Quat grad_sun = grad_function(sun_ref, sun_meas, q_1);
+    Quat grad = grad_sun;
+    //       grad.normalize();
+    Vec3 omega_eps_t = (2 * q_1.inverse() * grad).vec();
+    omega_bias += omega_eps_t * dt * 0.001;
+    Quat q_dervative_avs = q_dervative_omega(q_1, omega - omega_bias );
+
+    Quat q_dervative;
+    q_dervative = q_dervative_avs - betta * grad ;
+    q_1 =  q_1 + q_dervative * dt;
+    q_1.normalize();
+}
+
 Quat Madgwick_filter::get_orientaion()
 {
     return q_1.inverse();

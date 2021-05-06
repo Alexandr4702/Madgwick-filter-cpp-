@@ -63,6 +63,8 @@ public:
      * \param omega
      */
     void update(Vec3 sun_ref, Vec3 magn_ref, Vec3 sun_meas, Vec3 magn_meas, Vec3 omega, double dt);
+    void update(Vec3 sun_ref, Vec3 sun_meas, Vec3 omega, double dt);
+
 
     Quat get_orientaion();
 
