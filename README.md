@@ -1,4 +1,4 @@
-U can use any vector for getting orientation such as acclereation, magnetick field, sun sensor vector.
+U can use any vector for getting orientation such as acclereation, magnetick field, sun vector, extra.
 Using example:
 ~~~
 #include <iostream>
